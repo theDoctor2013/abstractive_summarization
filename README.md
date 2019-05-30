@@ -20,9 +20,11 @@ tensorflow 1.12（接近的几个版本应该也可以）
 （4）增加对[**pointer-generator**](https://github.com/abisee/pointer-generator)的模型的兼容性，可以直接使用其预训练模型。
 
 （5）对 policy gradient 的修改，将论文[A Deep Reinforced Model for Abstractive Summarization](https://arxiv.org/abs/1705.04304)中的公式（15）改为 
+
 $$
 L_{rl}=(r(y^{s}) - r(y^{g}))\sum_{t=1}^{n'}{\rm log}p(y_{t}^{g}|y_{1}^{g},...y_{t-1}^{g},x)
 $$
+
 即将 sample 得到的结果当做 baseline，根据 greedy 得到的结果对来计算梯度。
 
 
